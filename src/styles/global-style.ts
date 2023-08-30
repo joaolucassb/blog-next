@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     transition: opacity 300ms ease-in-out;
 
     &:hover {
-      opacity: .6;
+      opacity: 0.8;
     }
   }
 `;

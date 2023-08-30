@@ -37,6 +37,13 @@ export type PostCreatedBy = {
   username: null;
 };
 
+export type PostCover = {
+  data: {
+    id: PostID;
+    attributes: PostCoverAttributes;
+  };
+};
+
 export type PostCoverFormat = {
   ext: string;
   url: string;
@@ -53,8 +60,7 @@ export type PostCoverFormat = {
   };
 };
 
-export type PostCover = PostCoverFormat & {
-  id: PostID;
+export type PostCoverAttributes = {
   alternativeText: string;
   caption: string;
   previewUrl: null;
