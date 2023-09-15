@@ -2,9 +2,12 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Heading } from '@/components/Heading';
 import { MainContainer } from '@/components/MainContainer';
+import { PostContainer } from '@/components/PostContainer';
 import { PostCover } from '@/components/PostCover';
 import { PostDetails } from '@/components/PostDetails';
 import { PostData } from '@/domain/posts/post';
+
+// myblog-AB5nMhtv1J.disqus.com
 
 export type PostProps = {
   post: PostData;
@@ -27,7 +30,7 @@ export const Post = ({ post }: PostProps) => {
           category={post.attributes.category.data.attributes.name}
           date={post.attributes.createdAt}
         />
-        <div dangerouslySetInnerHTML={{ __html: post.attributes.content }} />
+        <PostContainer content={post.attributes.content} />
       </MainContainer>
       <Footer />
     </>
