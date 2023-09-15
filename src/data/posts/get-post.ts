@@ -12,6 +12,5 @@ export const getPost = async (
   const content = await markdownToHtml(jsonPost[0].attributes.content);
   const finalContent = { ...jsonPost[0] };
   finalContent.attributes.content = content;
-  console.log(finalContent);
   return [finalContent];
 };
