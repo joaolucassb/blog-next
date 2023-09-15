@@ -1,3 +1,4 @@
+import { Comments } from '@/Comments';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Heading } from '@/components/Heading';
@@ -31,6 +32,7 @@ export const Post = ({ post }: PostProps) => {
           date={post.attributes.createdAt}
         />
         <PostContainer content={post.attributes.content} />
+        <Comments title={post.attributes.title} slug={post.attributes.slug} />
       </MainContainer>
       <Footer />
     </>
