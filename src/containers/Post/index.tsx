@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { Comments } from '@/Comments';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
@@ -7,6 +8,8 @@ import { PostContainer } from '@/components/PostContainer';
 import { PostCover } from '@/components/PostCover';
 import { PostDetails } from '@/components/PostDetails';
 import { PostData } from '@/domain/posts/post';
+import { removeHtml } from '@/utils/remove-html';
+import { SITE_NAME } from '@/config/app-config';
 
 // myblog-AB5nMhtv1J.disqus.com
 
@@ -15,8 +18,16 @@ export type PostProps = {
 };
 
 export const Post = ({ post }: PostProps) => {
+  const postTitle = `${post.attributes.cover} - ${SITE_NAME}`;
   return (
     <>
+      <Head>
+        <title>{postTitle}</title>
+        <meta
+          name="description"
+          content={removeHtml(post.attributes.content).slice(0, 150)}
+        />
+      </Head>
       <Header />
       <MainContainer>
         <Heading>{post.attributes.title}</Heading>
