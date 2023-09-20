@@ -18,7 +18,7 @@ export type PostProps = {
 };
 
 export const Post = ({ post }: PostProps) => {
-  const postTitle = `${post.attributes.cover} - ${SITE_NAME}`;
+  const postTitle = `${post.attributes.title} - ${SITE_NAME}`;
   return (
     <>
       <Head>
